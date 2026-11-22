@@ -1,4 +1,5 @@
 :root {
+  color-scheme: light;
   --paper: #f7f3ea;
   --ink: #1a1a18;
   --body: #6b6355;
@@ -7,9 +8,55 @@
   --perf: #b8ae99;
   --accent: #c4642a;
   --bg: #e9e4d8;
+  --on-accent: #fffaf3;
 
   --card-w: 342px;
   --radius: 0;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #24262b;
+  --ink: #f5efe3;
+  --body: #c9c0b2;
+  --line: #494b52;
+  --faint: #b0a695;
+  --perf: #74716b;
+  --accent: #f0a56f;
+  --bg: #16181c;
+  --on-accent: #24180f;
+}
+
+.theme-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 8px 14px;
+  border: 1px solid var(--perf);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
 }
 
 * {
@@ -33,7 +80,7 @@ body {
 
 .notice {
   background: var(--accent);
-  color: var(--paper);
+  color: var(--on-accent);
   padding: 12px 14px;
   font-size: 13px;
   line-height: 1.5;
@@ -183,7 +230,7 @@ body {
 .stub__back {
   transform: rotateX(180deg);
   background: var(--accent);
-  color: var(--paper);
+  color: var(--on-accent);
 }
 
 .stub__label {

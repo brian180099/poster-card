@@ -3,6 +3,7 @@ import { MY_CARD } from "./config";
 import { registerCard } from "./lib/api";
 import Ticket from "./components/Ticket";
 import OtherCards from "./components/OtherCards";
+import ThemeToggle from "./components/ThemeToggle";
 
 export default function App() {
   const [notice, setNotice] = useState(null);
@@ -30,6 +31,7 @@ export default function App() {
 
   return (
     <main className="page">
+      <ThemeToggle />
       {notice && <p className="notice">{notice}</p>}
 
       <Ticket card={MY_CARD} />
